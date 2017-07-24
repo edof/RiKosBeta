@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">RiKos Beta</string>
+    <string name="welcome">Selamat Datang,</string>
+    <string name="logout">Keluar</string>
+    <string name="hint_uname"> Username</string>
+    <string name="hint_pw">Password</string>
+    <string name="login">Masuk</string>
+    <string name="hint_register">Belum punya akun? Register sekarang</string>
+    <string name="hint_fname">Nama Lengkap</string>
+    <string name="hint_email">Email</string>
+    <string name="daftar">Register</string>
+    <string name="hint_login">Sudah punya akun? Masuk</string>
+    <string name="nama_kost">Kost Tembalang Murah</string>
+    <string name="alamat_kost">Jalan i dulu aja yuk</string>
+    <string name="harga_kost">Rp XXX.XXX.XXX,-</string>
+    <string name="action_profile">Akun Saya</string>
+    <string name="action_about">Tentang Aplikasi</string>
+    <string name="action_exit">Keluar Aplikasi</string>
+    <string name="action_logout">Log Out Akun</string>
+    <string name="honyok_honyok">honyok - honyok - honyok - honyok - honyok - honyok - honyok - honyok - honyok - honyok - honyok - honyok - honyok - honyok - honyok - honyok - honyok - honyok - honyok - honyok - honyok - honyok - honyok - honyok - honyok - honyok - honyok - honyok -</string>
+    <string name="info">info</string>
+    <string name="status_kamar">Status: Ada Kamar</string>
+    <string name="luas_kamar">Luas: 2 x 2</string>
+    <string name="fasilitas">Fasilitas</string>
+    <string name="kontak">Kontak</string>
+    <string name="owner_kost">Owner: Pak To\'ok</string>
+    <string name="telepon_kost">No Telepon: 08XXXXXXXX</string>
+    <string name="title_activity_kost_detail">KostDetailActivity</string>
+    <string name="map_not_ready">Map belum siap</string>
+
+</resources>
