@@ -3,11 +3,16 @@ package com.edo.eno.rikosbeta.fragment;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -45,6 +50,16 @@ public class PetaFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_peta, container, false);
+        //set toolbar
+        Toolbar mToolbar = (Toolbar) view.findViewById(R.id.toolbar_peta);
+        ((AppCompatActivity) getActivity()).setSupportActionBar(mToolbar);
+        //set statusbar color
+        mToolbar.setBackgroundColor(getResources().getColor(R.color.map));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getActivity().getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(getResources().getColor(R.color.map));
+        }
 
         FragmentManager manager = getFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
@@ -105,6 +120,6 @@ public class PetaFragment extends Fragment implements OnMapReadyCallback {
         mMap = googleMap;
         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         LatLng tembalang = new LatLng(-7.055969, 110.439235);
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(tembalang,14));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(tembalang,14));
     }
 }

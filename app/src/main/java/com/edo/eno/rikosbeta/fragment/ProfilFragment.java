@@ -2,11 +2,16 @@ package com.edo.eno.rikosbeta.fragment;
 
 import android.app.Fragment;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -33,6 +38,16 @@ public class ProfilFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profil, container, false);
+
+        Toolbar mToolbar = (Toolbar) view.findViewById(R.id.toolbar_profil);
+        ((AppCompatActivity) getActivity()).setSupportActionBar(mToolbar);
+
+        mToolbar.setBackgroundColor(getResources().getColor(R.color.profil));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getActivity().getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(getResources().getColor(R.color.profil));
+        }
 
         String name = getArguments().getString("name");
         String email = getArguments().getString("email");

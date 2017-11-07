@@ -9,5 +9,10 @@
     <color name="ada">#009688</color>
     <color name="penuh">#F44336</color>
     <color name="harga">#2196F3</color>
+    <color name="home">#2962ff</color>
+    <color name="map">#009688</color>
+    <color name="favorit">#E91E63</color>
+    <color name="profil">#9C27B0</color>
+    <color name="app_bg">#bbdefb</color>
 
 </resources>

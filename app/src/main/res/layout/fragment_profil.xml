@@ -5,11 +5,14 @@
     android:layout_height="match_parent"
     tools:context="com.edo.eno.rikosbeta.activity.HomeActivity" >
 
+    <include layout="@layout/my_toolbar"
+        android:id="@+id/toolbar_profil"/>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center" >
+        android:layout_gravity="center"
+        android:layout_below="@id/toolbar_profil">
 
         <ImageView
             android:id="@+id/cover"

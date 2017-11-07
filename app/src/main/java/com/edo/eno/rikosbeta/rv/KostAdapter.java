@@ -48,7 +48,7 @@ public class KostAdapter extends RecyclerView.Adapter<KostAdapter.KostViewHolder
         KostViewHolder kostHolder = (KostViewHolder) holder;
 
         Picasso.with(mContext)
-                .load(kostItem.foto)
+                .load(kostItem.getFoto())
 //                .load("https://i1.sndcdn.com/artworks-000088295837-5nrb84-t500x500.jpg")
                 .placeholder(R.drawable.rikos_icon)
                 .error(R.drawable.ic_error)
@@ -65,9 +65,9 @@ public class KostAdapter extends RecyclerView.Adapter<KostAdapter.KostViewHolder
 ////                .fit()
 //                .into(kostHolder.ivFoto);
 
-        kostHolder.tvNama.setText(kostItem.nama);
-        kostHolder.tvHarga.setText(kostItem.harga);
-        kostHolder.tvAlamat.setText(kostItem.alamat);
+        kostHolder.tvNama.setText(kostItem.getNama());
+        kostHolder.tvHarga.setText("Rp " + kostItem.getHarga()+ ",-");
+        kostHolder.tvAlamat.setText(kostItem.getAlamat());
 //        kostHolder.tvLuas.setText(kostItem.luas);
 //        kostHolder.tvDeskripsi.setText(kostItem.deskripsi);
 //        kostHolder.tvStatus.setText(kostItem.status);
@@ -113,40 +113,80 @@ public class KostAdapter extends RecyclerView.Adapter<KostAdapter.KostViewHolder
                     KostItem ki = mKostList.get(position);
                     Intent iKost = new Intent(v.getContext(), DetailKostActivity.class);
 
-                    Log.e("passing nama: ", ki.nama);
-                    String getNama = ki.nama;
+                    String getNama = ki.getNama();
                     iKost.putExtra("namaKost", getNama);
+                    Log.e("passing nama: ", ki.getNama());
 
-                    String getHarga = ki.harga;
+                    String getHarga = ki.getHarga();
                     iKost.putExtra("hargaKost", getHarga);
+                    Log.e("passing harga: ", ki.getHarga());
 
-                    String getLuas = ki.luas;
+                    String getLuas = ki.getLuas();
                     iKost.putExtra("luasKost", getLuas);
+                    Log.e("passing luas: ", ki.getLuas());
 
-                    String getAlamat = ki.alamat;
+                    String getAlamat = ki.getAlamat();
                     iKost.putExtra("alamatKost", getAlamat);
+                    Log.e("passing alamat: ", ki.getAlamat());
 
-                    String getDeskripsi = ki.deskripsi;
+                    String getDeskripsi = ki.getDeskripsi();
                     iKost.putExtra("deskripsiKost", getDeskripsi);
+                    Log.e("passing deskrip: ", ki.getStatus());
 
-                    String getStatus = ki.status;
+                    String getStatus = ki.getStatus();
                     iKost.putExtra("statusKost", getStatus);
+                    Log.e("passing status: ", ki.getDeskripsi());
 
-                    Log.e("passing nama: ", ki.owner);
-                    String getOwner = ki.owner;
+                    String getOwner = ki.getOwner();
                     iKost.putExtra("ownerKost", getOwner);
+                    Log.e("passing owner: ", ki.getOwner());
 
-                    String getTelepon = ki.telepon;
+                    String getTelepon = ki.getTelepon();
                     iKost.putExtra("teleponKost", getTelepon);
+                    Log.e("passing telepon: ", ki.getTelepon());
 
-                    String getLatitude = ki.latitude;
+                    String getLatitude = ki.getLatitude();
                     iKost.putExtra("latitudeKost", getLatitude);
+                    Log.e("passing lat: ", ki.getLatitude());
 
-                    String getLongitude = ki.longitude;
+                    String getLongitude = ki.getLongitude();
                     iKost.putExtra("longitudeKost", getLongitude);
+                    Log.e("passing long: ", ki.getLongitude());
 
-                    String getFoto = ki.foto;
+                    String getFoto = ki.getFoto();
                     iKost.putExtra("fotoKost", getFoto);
+                    Log.e("passing foto: ", ki.getFoto());
+
+                    String getBed = ki.getBed();
+                    iKost.putExtra("bedKost", getBed);
+
+                    String getKm = ki.getKm_dalam();
+                    iKost.putExtra("kmKost", getKm);
+
+                    String getAlmari = ki.getAlmari();
+                    iKost.putExtra("almariKost", getAlmari);
+
+                    String getMeja = ki.getMeja_belajar();
+                    iKost.putExtra("mejaKost", getMeja);
+
+                    String getWifi = ki.getWifi();
+                    iKost.putExtra("wifiKost", getWifi);
+
+                    String getRuang = ki.getRuang_tamu();
+                    iKost.putExtra("ruangKost", getRuang);
+
+                    String getDapur = ki.getDapur();
+                    iKost.putExtra("dapurKost", getDapur);
+
+                    String getKulkas = ki.getKulkas();
+                    iKost.putExtra("kulkasKost", getKulkas);
+
+                    String getTv = ki.getTv();
+                    iKost.putExtra("tvKost", getTv);
+                    Log.e("passing fasilitas tv", ki.getTv());
+
+                    String getParkir = ki.getParkir_mobil();
+                    iKost.putExtra("parkirKost", getParkir);
 
                     v.getContext().startActivity(iKost);
                 }

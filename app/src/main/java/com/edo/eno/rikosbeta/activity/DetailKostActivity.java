@@ -58,19 +58,52 @@ public class DetailKostActivity extends AppCompatActivity {
         String harga = getIntent().getStringExtra("hargaKost");
         String alamat = getIntent().getStringExtra("alamatKost");
         String luas = getIntent().getStringExtra("luasKost");
-        String deskripsi = getIntent().getStringExtra("deskripsiKost");
-        String status = getIntent().getStringExtra("statusKost");
+        String deskripsi = getIntent().getStringExtra("statusKost");
+        String status = getIntent().getStringExtra("deskripsiKost");
         String owner = getIntent().getStringExtra("ownerKost");
         String telepon = getIntent().getStringExtra("teleponKost");
         String latitude = getIntent().getStringExtra("latitudeKost");
         String longitude = getIntent().getStringExtra("longitudeKost");
 
-        Log.e("get nama kost: ", nama);
-        Log.e("get nama kost: ", owner);
+        String bed = getIntent().getStringExtra("bedKost");
+        String km_dalam = getIntent().getStringExtra("kmKost");
+        String almari = getIntent().getStringExtra("almariKost");
+        String meja_belajar = getIntent().getStringExtra("mejaKost");
+        String wifi = getIntent().getStringExtra("wifiKost");
+        String ruang_tamu = getIntent().getStringExtra("ruangKost");
+        String dapur = getIntent().getStringExtra("dapurKost");
+        String kulkas = getIntent().getStringExtra("kulkasKost");
+        String tv = getIntent().getStringExtra("tvKost");
+        String parkir_mobil = getIntent().getStringExtra("parkirKost");
+
+        Log.e("get status ", status);
+        Log.e("get desk: ", deskripsi);
+        Log.e("get bed: ", bed);
 
         CollapsingToolbarLayout collapsingToolbar =
                 (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
         collapsingToolbar.setTitle(nama);
+
+        TextView mBed = (TextView)findViewById(R.id.tv_bed);
+        mBed.setText("Kasur: " + bed);
+        TextView kmDalam = (TextView) findViewById(R.id.tv_km);
+        kmDalam.setText("Kamar Mandi Dalam: " + km_dalam);
+        TextView mAlmari = (TextView)findViewById(R.id.tv_almari);
+        mAlmari.setText("Almari: " + almari);
+        TextView mejaBelajar = (TextView)findViewById(R.id.tv_meja);
+        mejaBelajar.setText("Meja Belajar: " + meja_belajar);
+        TextView mWifi = (TextView)findViewById(R.id.tv_wifi);
+        mWifi.setText("Wi-Fi/ Internet: " + wifi);
+        TextView ruangTamu = (TextView)findViewById(R.id.tv_rtamu);
+        ruangTamu.setText("Ruang Tamu: " + ruang_tamu);
+        TextView mDapur = (TextView)findViewById(R.id.tv_dapur);
+        mDapur.setText("Dapur: " + dapur);
+        TextView mKulkas = (TextView)findViewById(R.id.tv_kulkas);
+        mKulkas.setText("Kulkas: " + kulkas);
+        TextView mTv = (TextView)findViewById(R.id.tv_tv);
+        mTv.setText("Televisi: " + tv);
+        TextView parkir = (TextView)findViewById(R.id.tv_parkir);
+        parkir.setText("Parkir Mobil: " + parkir_mobil);
 
         TextView mHarga = (TextView) findViewById(R.id.detailHarga);
         mHarga.setText("Harga Sewa: Rp " + harga + "/bln");
