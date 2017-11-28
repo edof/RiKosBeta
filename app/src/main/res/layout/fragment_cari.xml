@@ -1,102 +1,261 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.edo.eno.rikosbeta.activity.HomeActivity" >
+    tools:context="com.edo.eno.rikosbeta.activity.HomeActivity">
 
-    <include layout="@layout/my_toolbar"
-        android:id="@+id/toolbar_favorit"/>
+    <include
+        android:id="@+id/toolbar_favorit"
+        layout="@layout/my_toolbar" />
 
-    <FrameLayout
+    <LinearLayout
+        android:id="@+id/layout_cari"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         android:layout_below="@id/toolbar_favorit">
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingBottom="10dp"
-            android:paddingLeft="3dp"
-            android:paddingRight="3dp">
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
-            <TextView
-                android:id="@+id/namaPanjang"
-                style="@style/Name"
-                android:layout_height="wrap_content"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_gravity="center"
-                android:layout_marginTop="30dp"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:textColor="#000000"
-                android:maxLines="2"
-                android:textSize="16dp"
-                android:paddingTop="10dp"
-                android:text="Cari Kost" />
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="10dp"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="5dp"
-                android:background="#ffe5e5e5"/>
-
-            <TextView
-                android:id="@+id/email"
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:textStyle="bold"
-                android:textColor="#000000"
-                android:maxLines="2"
-                android:paddingTop="10dp"
-                android:text="Cari Berdasarkan" />
-
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <RadioButton
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/namaPanjang"
+                    style="@style/Name"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/rb_harga"
-                    android:text="Harga"/>
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:text="Cari Kost"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
 
-                <RadioButton
-                    android:layout_width="wrap_content"
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#ffe5e5e5" />
+
+                <TextView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/rb_status"
-                    android:text="Status"/>
+                    android:maxLines="2"
+                    android:paddingTop="10dp"
+                    android:text="Ketersediaan"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-                <RadioButton
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/tv_ketersediaan"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/rb_luas"
-                    android:text="Luas"/>
-            </RadioGroup>
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Semua"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="16sp" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="5dp"
-                android:background="#ffe5e5e5"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_margin="5dp"
+                    android:background="#ffe5e5e5" />
 
-            <android.support.v7.widget.AppCompatButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_gravity="center"
-                android:id="@+id/btnSearch"
-                android:layout_marginTop="30dip"
-                android:text="Cari"
-                android:textAllCaps="false"
-                android:background="@color/colorResistance"
-                android:textSize="15sp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:paddingTop="10dp"
+                    android:text="Jenis Kost"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_jenis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Bulanan"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="16sp" />
 
-    </FrameLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_margin="5dp"
+                    android:background="#ffe5e5e5" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:maxLines="2"
+                    android:paddingTop="10dp"
+                    android:text="Range Harga"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar
+                    android:id="@+id/rangeSeekbar3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    app:bar_color="#8990C4"
+                    app:bar_highlight_color="#2434AD"
+                    app:corner_radius="2"
+                    app:data_type="_integer"
+                    app:gap="50000"
+                    app:left_thumb_color="#1A246D"
+                    app:left_thumb_color_pressed="#030B47"
+                    app:max_value="2000000"
+                    app:min_value="100000"
+                    app:right_thumb_color="#1A246D"
+                    app:right_thumb_color_pressed="#030B47"
+                    app:steps="50000" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp">
+
+                    <TextView
+                        android:id="@+id/tv_harga_min"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_harga_max"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="16sp" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_margin="5dp"
+                    android:background="#ffe5e5e5" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <CheckBox
+                            android:id="@+id/tv_bed"
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:text="Tempat tidur" />
+
+                        <CheckBox
+                            android:id="@+id/tv_km"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Kamar mandi dalam" />
+
+                        <CheckBox
+                            android:id="@+id/tv_almari"
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:text="Almari" />
+
+                        <CheckBox
+                            android:id="@+id/tv_meja"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Meja belajar" />
+
+                        <CheckBox
+                            android:id="@+id/tv_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TV" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <CheckBox
+                            android:id="@+id/tv_wifi"
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:text="Internet / Wi-Fi" />
+
+                        <CheckBox
+                            android:id="@+id/tv_parkir"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Parkir mobil" />
+
+                        <CheckBox
+                            android:id="@+id/tv_rtamu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ruang tamu" />
+
+                        <CheckBox
+                            android:id="@+id/tv_dapur"
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:text="Dapur" />
+
+                        <CheckBox
+                            android:id="@+id/tv_ac"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="AC" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#1A246D"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:text="Cari"
+            android:textSize="18sp" />
+
+    </LinearLayout>
 
 </RelativeLayout>

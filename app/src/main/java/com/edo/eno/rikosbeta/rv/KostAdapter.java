@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.edo.eno.rikosbeta.R;
 import com.edo.eno.rikosbeta.activity.DetailKostActivity;
+import com.edo.eno.rikosbeta.app.AppConfig;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -48,7 +49,7 @@ public class KostAdapter extends RecyclerView.Adapter<KostAdapter.KostViewHolder
         KostViewHolder kostHolder = (KostViewHolder) holder;
 
         Picasso.with(mContext)
-                .load(kostItem.getFoto())
+                .load(AppConfig.URL_FOTO + kostItem.getNama_gambar())
 //                .load("https://i1.sndcdn.com/artworks-000088295837-5nrb84-t500x500.jpg")
                 .placeholder(R.drawable.rikos_icon)
                 .error(R.drawable.ic_error)
@@ -113,6 +114,10 @@ public class KostAdapter extends RecyclerView.Adapter<KostAdapter.KostViewHolder
                     KostItem ki = mKostList.get(position);
                     Intent iKost = new Intent(v.getContext(), DetailKostActivity.class);
 
+                    String getId = ki.getId_kost();
+                    iKost.putExtra("id_kost",getId);
+                    Log.e("passing id", ki.getId_kost());
+
                     String getNama = ki.getNama();
                     iKost.putExtra("namaKost", getNama);
                     Log.e("passing nama: ", ki.getNama());
@@ -129,13 +134,21 @@ public class KostAdapter extends RecyclerView.Adapter<KostAdapter.KostViewHolder
                     iKost.putExtra("alamatKost", getAlamat);
                     Log.e("passing alamat: ", ki.getAlamat());
 
-                    String getDeskripsi = ki.getDeskripsi();
-                    iKost.putExtra("deskripsiKost", getDeskripsi);
-                    Log.e("passing deskrip: ", ki.getStatus());
-
                     String getStatus = ki.getStatus();
                     iKost.putExtra("statusKost", getStatus);
-                    Log.e("passing status: ", ki.getDeskripsi());
+                    Log.e("passing status:> ", ki.getStatus());
+
+                    String getDeskripsi = ki.getDeskripsi();
+                    iKost.putExtra("deskripsiKost", getDeskripsi);
+                    Log.e("passing deskrip:> ", ki.getDeskripsi());
+
+                    String getJenis = ki.getJenis();
+                    iKost.putExtra("jenisKost", getJenis);
+                    Log.e("passing jenis", ki.getJenis());
+
+                    String getTipe = ki.getTipe();
+                    iKost.putExtra("tipeKost", getTipe);
+                    Log.e("passing tipe", ki.getTipe());
 
                     String getOwner = ki.getOwner();
                     iKost.putExtra("ownerKost", getOwner);
@@ -153,9 +166,9 @@ public class KostAdapter extends RecyclerView.Adapter<KostAdapter.KostViewHolder
                     iKost.putExtra("longitudeKost", getLongitude);
                     Log.e("passing long: ", ki.getLongitude());
 
-                    String getFoto = ki.getFoto();
-                    iKost.putExtra("fotoKost", getFoto);
-                    Log.e("passing foto: ", ki.getFoto());
+                    String getGambar = ki.getNama_gambar();
+                    iKost.putExtra("gambarKost", getGambar);
+                    Log.e("passing foto: ", ki.getNama_gambar());
 
                     String getBed = ki.getBed();
                     iKost.putExtra("bedKost", getBed);
@@ -178,8 +191,8 @@ public class KostAdapter extends RecyclerView.Adapter<KostAdapter.KostViewHolder
                     String getDapur = ki.getDapur();
                     iKost.putExtra("dapurKost", getDapur);
 
-                    String getKulkas = ki.getKulkas();
-                    iKost.putExtra("kulkasKost", getKulkas);
+                    String getAc = ki.getAc();
+                    iKost.putExtra("acKost", getAc);
 
                     String getTv = ki.getTv();
                     iKost.putExtra("tvKost", getTv);

@@ -20,6 +20,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -32,6 +33,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.edo.eno.rikosbeta.R;
+import com.edo.eno.rikosbeta.app.AppConfig;
 import com.edo.eno.rikosbeta.rv.KostItem;
 import com.squareup.picasso.Picasso;
 
@@ -54,12 +56,29 @@ public class DetailKostActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        String nama = getIntent().getStringExtra("namaKost");
+        final String nama = getIntent().getStringExtra("namaKost");
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DetailKostActivity.this, GalleryActivity.class);
+                String id_kost = getIntent().getStringExtra("id_kost");
+                intent.putExtra("id_kost", id_kost);
+                intent.putExtra("nama_kost", nama);
+                Log.e("id put fab", id_kost);
+                Log.e("pass nama kost", nama);
+                startActivity(intent);
+            }
+        });
+
         String harga = getIntent().getStringExtra("hargaKost");
         String alamat = getIntent().getStringExtra("alamatKost");
         String luas = getIntent().getStringExtra("luasKost");
-        String deskripsi = getIntent().getStringExtra("statusKost");
-        String status = getIntent().getStringExtra("deskripsiKost");
+        String deskripsi = getIntent().getStringExtra("deskripsiKost");
+        String status = getIntent().getStringExtra("statusKost");
+        String jenis = getIntent().getStringExtra("jenisKost");
+        String tipe = getIntent().getStringExtra("tipeKost");
         String owner = getIntent().getStringExtra("ownerKost");
         String telepon = getIntent().getStringExtra("teleponKost");
         String latitude = getIntent().getStringExtra("latitudeKost");
@@ -72,13 +91,13 @@ public class DetailKostActivity extends AppCompatActivity {
         String wifi = getIntent().getStringExtra("wifiKost");
         String ruang_tamu = getIntent().getStringExtra("ruangKost");
         String dapur = getIntent().getStringExtra("dapurKost");
-        String kulkas = getIntent().getStringExtra("kulkasKost");
+        String ac = getIntent().getStringExtra("acKost");
         String tv = getIntent().getStringExtra("tvKost");
         String parkir_mobil = getIntent().getStringExtra("parkirKost");
 
-        Log.e("get status ", status);
-        Log.e("get desk: ", deskripsi);
-        Log.e("get bed: ", bed);
+        Log.e("get deskrip ", deskripsi);
+        Log.e("get tipe: ", tipe);
+        Log.e("get ac: ", ac);
 
         CollapsingToolbarLayout collapsingToolbar =
                 (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
@@ -98,8 +117,8 @@ public class DetailKostActivity extends AppCompatActivity {
         ruangTamu.setText("Ruang Tamu: " + ruang_tamu);
         TextView mDapur = (TextView)findViewById(R.id.tv_dapur);
         mDapur.setText("Dapur: " + dapur);
-        TextView mKulkas = (TextView)findViewById(R.id.tv_kulkas);
-        mKulkas.setText("Kulkas: " + kulkas);
+        TextView mKulkas = (TextView)findViewById(R.id.tv_ac);
+        mKulkas.setText("AC: " + ac);
         TextView mTv = (TextView)findViewById(R.id.tv_tv);
         mTv.setText("Televisi: " + tv);
         TextView parkir = (TextView)findViewById(R.id.tv_parkir);
@@ -109,7 +128,7 @@ public class DetailKostActivity extends AppCompatActivity {
         mHarga.setText("Harga Sewa: Rp " + harga + "/bln");
 //        mHarga.setTextColor(ContextCompat.getColor(this, R.color.harga));
         TextView mLuas = (TextView) findViewById(R.id.detailLuas);
-        mLuas.setText("Luas: " + luas + " m\u00B2");
+        mLuas.setText("Luas: " + luas + " m");
         TextView mAlamat = (TextView) findViewById(R.id.detailAlamat);
         mAlamat.setText("Alamat: " + alamat);
         TextView mDeskripsi = (TextView) findViewById(R.id.detailDeskripsi);
@@ -139,10 +158,10 @@ public class DetailKostActivity extends AppCompatActivity {
     }
 
     private void loadBackdrop() {
-        String foto = getIntent().getStringExtra("fotoKost");
+        String foto = getIntent().getStringExtra("gambarKost");
         ImageView imageView = (ImageView) findViewById(R.id.backdrop);
         Picasso.with(this)
-                .load(foto)
+                .load(AppConfig.URL_FOTO + foto)
                 .into(imageView);
     }
 

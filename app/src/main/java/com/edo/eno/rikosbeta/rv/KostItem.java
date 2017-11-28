@@ -10,17 +10,20 @@ import java.util.List;
 
 public class KostItem implements Serializable {
 
+    private String id_kost;
     private String nama;
     private String harga;
     private String luas;
     private String alamat;
     private String deskripsi;
     private String status;
+    private String jenis;
+    private String tipe;
     private String owner;
     private String telepon;
     private String latitude;
     private String longitude;
-    private String foto;
+    private String nama_gambar;
     private String bed;
     private String km_dalam;
     private String almari;
@@ -28,22 +31,25 @@ public class KostItem implements Serializable {
     private String wifi;
     private String ruang_tamu;
     private String dapur;
-    private String kulkas;
+    private String ac;
     private String tv;
     private String parkir_mobil;
 
-    public KostItem(String nama, String harga, String luas, String alamat, String deskripsi, String status, String owner, String telepon, String latitude, String longitude, String foto, String bed, String km_dalam, String almari, String meja_belajar, String wifi, String ruang_tamu, String dapur, String kulkas, String tv, String parkir_mobil) {
+    public KostItem(String id_kost, String nama, String harga, String luas, String alamat, String deskripsi, String status, String jenis, String tipe, String owner, String telepon, String latitude, String longitude, String nama_gambar, String bed, String km_dalam, String almari, String meja_belajar, String wifi, String ruang_tamu, String dapur, String ac, String tv, String parkir_mobil) {
+        this.id_kost = id_kost;
         this.nama = nama;
         this.harga = harga;
         this.luas = luas;
         this.alamat = alamat;
         this.deskripsi = deskripsi;
         this.status = status;
+        this.jenis = jenis;
+        this.tipe = tipe;
         this.owner = owner;
         this.telepon = telepon;
         this.latitude = latitude;
         this.longitude = longitude;
-        this.foto = foto;
+        this.nama_gambar = nama_gambar;
         this.bed = bed;
         this.km_dalam = km_dalam;
         this.almari = almari;
@@ -51,9 +57,17 @@ public class KostItem implements Serializable {
         this.wifi = wifi;
         this.ruang_tamu = ruang_tamu;
         this.dapur = dapur;
-        this.kulkas = kulkas;
+        this.ac = ac;
         this.tv = tv;
         this.parkir_mobil = parkir_mobil;
+    }
+
+    public String getId_kost() {
+        return id_kost;
+    }
+
+    public void setId_kost(String id_kost) {
+        this.id_kost = id_kost;
     }
 
     public String getNama() {
@@ -104,6 +118,22 @@ public class KostItem implements Serializable {
         this.status = status;
     }
 
+    public String getJenis() {
+        return jenis;
+    }
+
+    public void setJenis(String jenis) {
+        this.jenis = jenis;
+    }
+
+    public String getTipe() {
+        return tipe;
+    }
+
+    public void setTipe(String tipe) {
+        this.tipe = tipe;
+    }
+
     public String getOwner() {
         return owner;
     }
@@ -136,12 +166,12 @@ public class KostItem implements Serializable {
         this.longitude = longitude;
     }
 
-    public String getFoto() {
-        return foto;
+    public String getNama_gambar() {
+        return nama_gambar;
     }
 
-    public void setFoto(String foto) {
-        this.foto = foto;
+    public void setNama_gambar(String nama_gambar) {
+        this.nama_gambar = nama_gambar;
     }
 
     public String getBed() {
@@ -200,12 +230,12 @@ public class KostItem implements Serializable {
         this.dapur = dapur;
     }
 
-    public String getKulkas() {
-        return kulkas;
+    public String getAc() {
+        return ac;
     }
 
-    public void setKulkas(String kulkas) {
-        this.kulkas = kulkas;
+    public void setAc(String ac) {
+        this.ac = ac;
     }
 
     public String getTv() {

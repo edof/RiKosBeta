@@ -7,7 +7,7 @@
     <item>
         <bitmap
             android:gravity="center"
-            android:src="@drawable/rikos_xxhdpi"/>
+            android:src="@drawable/rikos_splash"/>
     </item>
 
 </layer-list>

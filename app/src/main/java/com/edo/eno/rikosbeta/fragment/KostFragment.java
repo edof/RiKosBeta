@@ -85,17 +85,20 @@ public class KostFragment extends Fragment {
                             for(int i=0;i<jsonArray.length();i++){
                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
 
+                                String idKost = jsonObject.getString("id_kost");
                                 String namaKost = jsonObject.getString("nama");
                                 String hargaKost = jsonObject.getString("harga");
                                 String luasKost = jsonObject.getString("luas");
                                 String alamatKost = jsonObject.getString("alamat");
-                                String statusKost = jsonObject.getString("status");
                                 String desKost = jsonObject.getString("deskripsi");
+                                String statusKost = jsonObject.getString("status");
+                                String jenisKost = jsonObject.getString("jenis");
+                                String tipeKost = jsonObject.getString("tipe");
                                 String ownerKost = jsonObject.getString("owner");
                                 String teleponKost = jsonObject.getString("telepon");
                                 String latKost = jsonObject.getString("latitude");
                                 String longKost = jsonObject.getString("longitude");
-                                String fotoKost = jsonObject.getString("foto");
+                                String gambarKost = jsonObject.getString("nama_gambar");
                                 String bedKost = jsonObject.getString("bed");
                                 String kmKost = jsonObject.getString("km_dalam");
                                 String almariKost = jsonObject.getString("almari");
@@ -103,7 +106,7 @@ public class KostFragment extends Fragment {
                                 String wifiKost = jsonObject.getString("wifi");
                                 String ruangKost = jsonObject.getString("ruang_tamu");
                                 String dapurKost = jsonObject.getString("dapur");
-                                String kulkasKost = jsonObject.getString("kulkas");
+                                String acKost = jsonObject.getString("ac");
                                 String tvKost = jsonObject.getString("tv");
                                 String parkirKost = jsonObject.getString("parkir_mobil");
 
@@ -125,8 +128,8 @@ public class KostFragment extends Fragment {
 //                                    fasilitasArr[9] = fasilObject.getString("parkir_mobil");
 //                                }
 
-                                KostItem mKost = new KostItem(namaKost, hargaKost, luasKost, alamatKost, statusKost, desKost, ownerKost,teleponKost, latKost, longKost, fotoKost,
-                                        bedKost, kmKost, almariKost, mejaKost, wifiKost, ruangKost, dapurKost, kulkasKost, tvKost, parkirKost);
+                                KostItem mKost = new KostItem(idKost, namaKost, hargaKost, luasKost, alamatKost, desKost, statusKost, jenisKost, tipeKost, ownerKost,teleponKost, latKost, longKost, gambarKost,
+                                        bedKost, kmKost, almariKost, mejaKost, wifiKost, ruangKost, dapurKost, acKost, tvKost, parkirKost);
                                 kostList.add(mKost);
                             }
                         } catch (JSONException e) {

@@ -6,14 +6,18 @@ package com.edo.eno.rikosbeta.app;
 
 public class AppConfig {
     //user login url
-    public static String URL_LOGIN = "http://rikos.cf/android/login.php";
+    public static String URL_LOGIN = "http://api.rikos.cf/login.php";
 
     //user register url
-    public static String URL_REGISTER = "http://rikos.cf/android/register.php";
+    public static String URL_REGISTER = "http://api.rikos.cf/register.php";
 
     //kost url
-    public static String URL_KOST = "http://rikos.cf/android/getKost.php";
+    public static String URL_KOST = "http://api.rikos.cf/getKost.php";
 
     //url foto kost
-    public static String URL_FOTO ="http://rikos.xyz/admin/gambar/";
+    public static String URL_FOTO ="http://rikos.cf/image/";
+
+    public static String URL_GET_FOTO = "http://api.rikos.cf/getFoto.php";
+
+    public static String URL_CARI = "http://api.rikos.cf/searchKost.php";
 }
