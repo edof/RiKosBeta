@@ -164,12 +164,12 @@ public class DetailKostActivity extends AppCompatActivity {
                 .load(AppConfig.URL_FOTO + foto)
                 .into(imageView);
     }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
+//
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.menu_main, menu);
+//        return true;
+//    }
 
     //untuk membuat panah di toolbar kembali ke halaman awal
     //id dari panah default "home"

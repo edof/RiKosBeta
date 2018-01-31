@@ -20,4 +20,12 @@ public class AppConfig {
     public static String URL_GET_FOTO = "http://api.rikos.cf/getFoto.php";
 
     public static String URL_CARI = "http://api.rikos.cf/searchKost.php";
+
+    public static String URL_EDIT = "http://rikos.cf/kos/wv/kost.php?email=";
+//
+    public static String URL_TAMBAH = "http://rikos.cf/kos/wv/tambah_kost.php?email=";
+
+//    public static String URL_EDIT = "http://rikos.cf/web/edit.php?email=";
+
+//    public static String URL_TAMBAH = "http://rikos.cf/web/tambah_kost.php?email=";
 }

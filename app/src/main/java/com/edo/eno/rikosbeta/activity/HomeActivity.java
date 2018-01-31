@@ -10,6 +10,7 @@ import android.util.Log;
 import com.edo.eno.rikosbeta.R;
 import com.edo.eno.rikosbeta.fragment.CariFragment;
 import com.edo.eno.rikosbeta.fragment.KostFragment;
+import com.edo.eno.rikosbeta.fragment.OwnerFragment;
 import com.edo.eno.rikosbeta.fragment.PetaFragment;
 import com.edo.eno.rikosbeta.fragment.ProfilFragment;
 import com.edo.eno.rikosbeta.helper.SQLiteHandler;
@@ -58,9 +59,9 @@ public class HomeActivity extends AppCompatActivity {
                 }
                 else if (menuItemId == R.id.menu_profil)
                 {
-                    ProfilFragment profilFragment = new ProfilFragment();
-                    profilFragment.setArguments(args);
-                    getFragmentManager().beginTransaction().replace(R.id.frame, profilFragment).commit();
+                    OwnerFragment ownerFragment = new OwnerFragment();
+                    ownerFragment.setArguments(args);
+                    getFragmentManager().beginTransaction().replace(R.id.frame, ownerFragment).commit();
                 }
 
             }
